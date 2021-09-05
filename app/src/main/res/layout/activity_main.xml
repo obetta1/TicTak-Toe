@@ -7,27 +7,88 @@
     android:background="@drawable/group_6"
     tools:context=".MainActivity">
 
+
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="68dp"
+        android:gravity="center"
+        android:text=" Tic Tak Toe"
+        android:textSize="45dp"
+        android:textStyle="bold"
+        android:textColor="#00B8D4"
+        android:fontFamily="@font/almendra_display"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/enter_button"
-        android:layout_width="198dp"
-        android:layout_height="61dp"
+        android:layout_width="259dp"
+        android:layout_height="67dp"
         android:layout_marginBottom="68dp"
-        android:focusable="true"
         android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="352dp"
+        android:layout_height="162dp"
+        app:cardBackgroundColor="#00B8D4"
+        app:cardCornerRadius="34dp"
+        app:cardElevation="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.316"
+        app:shapeAppearance="@style/Animation.Design.BottomSheetDialog">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="10dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/playerName2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EAF0F1"
+                android:hint="player 2"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/player2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+          <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/playerName1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#EAF0F1"
+                android:hint="player 1"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/player2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
