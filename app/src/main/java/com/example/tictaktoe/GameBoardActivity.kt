@@ -56,18 +56,20 @@ class GameBoardActivity : AppCompatActivity() {
 // color  to the cells when they are clicked
     private fun playGame(cellId: Int, btnSelected: Button) {
          if (activePlayer == 1){
+             // add the cellId tothe arrays of player1
              player1.add(cellId)
              btnSelected.setBackgroundColor(Color.parseColor("#2ff44f"))
              btnSelected.text = "X"
              activePlayer = 2
 
          }else{
+             // add the cellId tothe arrays of player2
              player2.add(cellId)
              btnSelected.setBackgroundColor(Color.parseColor("#ffffff"))
              btnSelected.text = "O"
-
              activePlayer = 1
          }
+    // disable button if it has been  clicked
     btnSelected.isEnabled = false
 
 // check for the winner
