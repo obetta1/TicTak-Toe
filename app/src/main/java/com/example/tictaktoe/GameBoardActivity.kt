@@ -13,6 +13,7 @@ class GameBoardActivity : AppCompatActivity() {
     lateinit var playerName1 : String
     lateinit var playerName2 :String
 
+// initailize the arrays for the two players
     var player1 = arrayListOf<Int>()
     var player2 = arrayListOf<Int>()
     var activePlayer = 1
@@ -20,6 +21,7 @@ class GameBoardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_board)
 
+        // retrieve the names of players from the mainactivity
          val bundle :Bundle? =   intent.extras
        val pl = intent.getStringExtra("player1")
        var pl2 = intent.getStringExtra("player2")
@@ -29,7 +31,7 @@ class GameBoardActivity : AppCompatActivity() {
 
     }
 
-
+//set click listener each button on the game board and assign a cellId on each
     fun btnClicked(view: View) {
         var btnSelected = view as Button
         var cellId = 0
@@ -50,7 +52,8 @@ class GameBoardActivity : AppCompatActivity() {
 
     }
 
-
+// set a text "X" or "O" to the cell  and also set the background
+// color  to the cells when they are clicked
     private fun playGame(cellId: Int, btnSelected: Button) {
          if (activePlayer == 1){
              player1.add(cellId)
@@ -67,14 +70,13 @@ class GameBoardActivity : AppCompatActivity() {
          }
     btnSelected.isEnabled = false
 
-
+// check for the winner
         if (player1.contains(1) && player1.contains(2) && player1.contains(3)) {
             Toast.makeText(
                 this,
                 " congratulations!, $playerName1  have won the game ",
                 Toast.LENGTH_SHORT
             ).show()
-
         }
         if (player1.contains(4) && player1.contains(5) && player1.contains(6)) {
             Toast.makeText(
@@ -126,8 +128,6 @@ class GameBoardActivity : AppCompatActivity() {
             ).show()
 
         }
-
-
         if (player2.contains(1) && player2.contains(2) && player2.contains(3)) {
             Toast.makeText(
                 this,
@@ -185,7 +185,5 @@ class GameBoardActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
         }
-
-
     }
 }
